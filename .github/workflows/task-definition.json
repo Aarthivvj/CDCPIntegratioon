@@ -1,0 +1,19 @@
+{
+	"family": "TaskdefintionforMVG",
+	"taskRoleArn": "arn:aws:iam::468167146633:role/ecsTaskExecutionRole",
+	"containerDefinitions": [{
+		"name": "apache_container",
+		"image": "468167146633.dkr.ecr.ap-south-1.amazonaws.com/mvgrepo:GIT_COMMIT",
+		"cpu": 400,
+		"memory": 300,
+		"memoryReservation": 200,
+		"volumesFrom": [],
+		"portMappings": [{
+			"hostPort": 80,
+			"containerPort": 80,
+			"protocol": "tcp"
+		}],
+		"essential": true,
+		"mountPoints": []
+	}]
+}
