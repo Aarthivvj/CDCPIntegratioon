@@ -78,7 +78,7 @@ jobs:
           }
 
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            SERVICE_NAME="MVGTaskservice"
+            SERVICE_NAME="MVGServiceTask"
             IMAGE_VERSION="${{ env.BRANCH_NAME }}-${{ github.run_number }}"
             TASK_FAMILY="TaskdefintionforMVG"
             CLUSTER="MVGCluster"
