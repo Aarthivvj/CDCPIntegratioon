@@ -78,10 +78,10 @@ jobs:
           }
 
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            SERVICE_NAME="MVGServicesdef"
+            SERVICE_NAME="MVGProjectServices"
             IMAGE_VERSION="${{ env.BRANCH_NAME }}-${{ github.run_number }}"
             TASK_FAMILY="TaskdefintionforMVG"
-            CLUSTER="MVGCluster"
+            CLUSTER="MVGServicesdef"
             TASK_ROLE="ecsTaskExecutionRole"
             JSON_FILE=".github/workflows/task-definition"
             RUNNING_COUNT=1
