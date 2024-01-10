@@ -33,7 +33,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t gitactions-ecs:${{ env.BRANCH_NAME }}-${{ github.run_number }} .
-          docker tag gitactions-ecs:${{ env.BRANCH_NAME }}-${{ github.run_number }} 468167146633.dkr.ecr.ap-south-1.amazonaws.com/mvgrepo:${{ env.BRANCH_NAME }}-${{ github.run_number }}
+          docker tag gitactions-ecs:${{ env.BRANCH_NAME }}-${{ github.run_number }} 345622656821.dkr.ecr.ap-south-1.amazonaws.com/mvgrepo:${{ env.BRANCH_NAME }}-${{ github.run_number }}
     
       - name: Login to Amazon ECR
         id: login-ecr
@@ -41,7 +41,7 @@ jobs:
 
       - name: Push Docker image to Amazon ECR
         run: |
-          docker push 468167146633.dkr.ecr.ap-south-1.amazonaws.com/mvgrepo:${{ env.BRANCH_NAME }}-${{ github.run_number }}
+          docker push 345622656821.dkr.ecr.ap-south-1.amazonaws.com/mvgrepo:${{ env.BRANCH_NAME }}-${{ github.run_number }}
       
       - name: Deploy to ECS
         run: |
@@ -78,7 +78,7 @@ jobs:
           }
 
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            SERVICE_NAME="MVGServiceTask"
+            SERVICE_NAME="MVGTaskService"
             IMAGE_VERSION="${{ env.BRANCH_NAME }}-${{ github.run_number }}"
             TASK_FAMILY="TaskdefintionforMVG"
             CLUSTER="MVGCluster"
