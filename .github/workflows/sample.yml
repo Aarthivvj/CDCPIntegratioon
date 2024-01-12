@@ -78,7 +78,7 @@ jobs:
           }
 
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            SERVICE_NAME="MVGTaskService"
+            SERVICE_NAME="MVGTaskServices"
             IMAGE_VERSION="${{ env.BRANCH_NAME }}-${{ github.run_number }}"
             TASK_FAMILY="TaskdefintionforMVG"
             CLUSTER="MVGCluster"
@@ -89,3 +89,4 @@ jobs:
           else
             echo "Skip deployment"
           fi
+x`
